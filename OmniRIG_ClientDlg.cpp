@@ -13,6 +13,7 @@
 
 #include "stdafx.h"
 #include "afxctl.h"
+#include "resource.h"
 #include "OmniRIG_Client.h"
 #include "OmniRIG_ClientDlg.h" 
 
@@ -403,7 +404,22 @@ HRESULT COmniRIG_ClientDlg::ParamsChange(long RigNumber, long Params)
 	if (Params & PM_FREQ)
 		m_lFreq[nRigIndex] = pRig->GetFreq();
 	if (Params & PM_FREQA)
+	{
 		m_lFreqA[nRigIndex] = pRig->GetFreqA();
+		
+		CString freq;
+		freq.Format(_T("%08ld"), pRig->GetFreqA());
+		CString *digit = new CString;
+
+		for (int i = 0; i < 8; i++)
+		{
+			if (freq == "00000000")
+				break;
+			*digit = freq[i];
+			const wchar_t* s = digit->GetString();
+			SetDlgItemText(IDCSTATIC7 - i, s);
+		}	
+	}
 	if (Params & PM_FREQB)
 		m_lFreqB[nRigIndex] = pRig->GetFreqB();
 	if (Params & (PM_CW_U|PM_CW_L|PM_SSB_U|PM_SSB_L|PM_DIG_U|PM_DIG_L|PM_AM|PM_FM))
