@@ -102,9 +102,9 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	//DDX_Control(pDX, IDC_R1_FREQ, m_editFreq[0]);
 	//DDX_Control(pDX, IDC_R2_FREQ, m_editFreq[1]);
 	DDX_Text(pDX, IDC_R1_FREQ_A, m_lFreqA[0]);
-	DDX_Text(pDX, IDC_R2_FREQ_A, m_lFreqA[1]);
+	//DDX_Text(pDX, IDC_R2_FREQ_A, m_lFreqA[1]);
 	DDX_Control(pDX, IDC_R1_FREQ_A, m_editFreqA[0]);
-	DDX_Control(pDX, IDC_R2_FREQ_A, m_editFreqA[1]);
+	//DDX_Control(pDX, IDC_R2_FREQ_A, m_editFreqA[1]);
 	DDX_Text(pDX, IDC_R1_FREQ_B, m_lFreqB[0]);
 	//DDX_Text(pDX, IDC_R2_FREQ_B, m_lFreqB[1]);
 	DDX_Control(pDX, IDC_R1_FREQ_B, m_editFreqB[0]);
@@ -405,7 +405,7 @@ HRESULT COmniRIG_ClientDlg::ParamsChange(long RigNumber, long Params)
 		m_lFreq[nRigIndex] = pRig->GetFreq();
 	if (Params & PM_FREQA)
 	{
-		m_lFreqA[nRigIndex] = pRig->GetFreqA();
+		m_lFreqA[0] = pRig->GetFreqA();
 		
 		CString freq;
 		freq.Format(_T("%08ld"), pRig->GetFreqA());
@@ -555,8 +555,8 @@ void COmniRIG_ClientDlg::OnBnClickedBtnR1FreqA()
 
 void COmniRIG_ClientDlg::OnBnClickedBtnR2FreqA()
 {
-	UpdateData(TRUE);
-	SetFreqA(RIG2, m_lFreqA[1]);
+	//UpdateData(TRUE);
+	//SetFreqA(RIG2, m_lFreqA[1]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedBtnR1FreqB()
@@ -567,8 +567,8 @@ void COmniRIG_ClientDlg::OnBnClickedBtnR1FreqB()
 
 void COmniRIG_ClientDlg::OnBnClickedBtnR2FreqB()
 {
-	UpdateData(TRUE);
-	SetFreqB(RIG2, m_lFreq[1]);
+	//UpdateData(TRUE);
+	//SetFreqB(RIG2, m_lFreq[1]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedRadioR1VfoA()
