@@ -114,6 +114,7 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(COmniRIG_ClientDlg, CDialog)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
+	ON_WM_CTLCOLOR()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_DIALOG_VISIBLE, &COmniRIG_ClientDlg::OnBnClickedDialogVisible)
 	ON_BN_CLICKED(IDC_BTN_R1_FREQ_A, &COmniRIG_ClientDlg::OnBnClickedBtnR1FreqA)
@@ -202,6 +203,8 @@ BOOL COmniRIG_ClientDlg::OnInitDialog()
 		RigTypeChange(nRigNumber);
 		StatusChange(nRigNumber);
 	}
+
+	m_brushBg.CreateSolidBrush(RGB(240, 240, 255));
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -552,4 +555,14 @@ void COmniRIG_ClientDlg::OnBnClickedCheckR2Split()
 {
 	BOOL bSplitToggle = (m_checkSplit[1].GetCheck() == BST_CHECKED);
 	SetSplit(RIG2, bSplitToggle);
+}
+
+HBRUSH COmniRIG_ClientDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
+{
+	HBRUSH hBrush = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
+	if (nCtlColor == CTLCOLOR_DLG)
+	{
+		return m_brushBg;
+	}
+	return hBrush;
 }

@@ -101,6 +101,7 @@ private:
 	afx_msg void OnBnClickedRadioR1VfoB();
 	afx_msg void OnBnClickedRadioR2VfoA();
 	afx_msg void OnBnClickedRadioR2VfoB();
+	HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 
 protected:
 	CEdit* m_pEditFreq[MAX_RADIO];
@@ -135,4 +136,5 @@ private:
 	CStatic m_staticStatus[MAX_RADIO];
 	CButton m_radioVfoA[MAX_RADIO];
 	CButton m_radioVfoB[MAX_RADIO];
+	CBrush m_brushBg;
 };
