@@ -262,8 +262,6 @@ HCURSOR COmniRIG_ClientDlg::OnQueryDragIcon()
 
 HRESULT COmniRIG_ClientDlg::VisibleChange()
 {
-	BOOL bIsVisible = m_pOmniRig->GetDialogVisible();
-	//m_btnDialogVisible.SetCheck(bIsVisible ? BST_CHECKED : BST_UNCHECKED);
 	return 0L;
 }
 
