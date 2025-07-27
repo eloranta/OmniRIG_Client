@@ -142,14 +142,14 @@ BEGIN
     LTEXT           "Static",IDC_STATIC_R2_RIG,51,155,63,8,NOT WS_VISIBLE
     CTEXT           "5",IDCSTATIC7,9,41,8,8
     CTEXT           "0",IDCSTATIC6,16,41,8,8
-    CTEXT           ".",IDC_STATIC,22,41,8,8
-    CTEXT           "3",IDCSTATIC5,28,41,8,8
-    CTEXT           "1",IDCSTATIC4,35,41,8,8
-    CTEXT           "3",IDCSTATIC3,43,41,8,8
-    CTEXT           ".",IDC_STATIC,49,41,8,8
-    CTEXT           "0",IDCSTATIC2,56,41,8,8
-    CTEXT           "0",IDCSTATIC1,64,41,8,8
-    CTEXT           "0",IDCSTATIC0,72,41,8,8
+    CTEXT           ".",IDC_STATIC,21,41,8,8
+    CTEXT           "3",IDCSTATIC5,26,41,8,8
+    CTEXT           "1",IDCSTATIC4,32,41,8,8
+    CTEXT           "3",IDCSTATIC3,38,41,8,8
+    CTEXT           ".",IDC_STATIC,43,41,8,8
+    CTEXT           "0",IDCSTATIC2,48,41,8,8
+    CTEXT           "0",IDCSTATIC1,54,41,8,8
+    CTEXT           "0",IDCSTATIC0,60,41,8,8
 END
 
 
