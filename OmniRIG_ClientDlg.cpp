@@ -116,7 +116,7 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_BTN_R1_FREQ_B, m_btnFreqB[0]);
 	//DDX_Control(pDX, IDC_BTN_R2_FREQ_B, m_btnFreqB[1]);
 	DDX_Control(pDX, IDC_R1_MODE, m_cboxMode[0]);
-	DDX_Control(pDX, IDC_R2_MODE, m_cboxMode[1]);
+	//DDX_Control(pDX, IDC_R2_MODE, m_cboxMode[1]);
 	DDX_Control(pDX, IDC_CHECK_R1_SPLIT, m_checkSplit[0]);
 	DDX_Control(pDX, IDC_CHECK_R2_SPLIT, m_checkSplit[1]);
 	DDX_Control(pDX, IDC_STATIC_R1_RIG, m_staticRig[0]);
@@ -317,48 +317,48 @@ HRESULT COmniRIG_ClientDlg::RigTypeChange(long RigNumber)
 	//m_btnFreqB[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQB);
 
 	int nZIndex;
-	m_cboxMode[nRigIndex].ResetContent();
+	m_cboxMode[0].ResetContent();
 	if (m_lReadable[nRigIndex] & PM_CW_U)
 	{
-		nZIndex = m_cboxMode[nRigIndex].AddString(_TEXT("CW"));
-		m_cboxMode[nRigIndex].SetItemData(nZIndex, PM_CW_U);
+		nZIndex = m_cboxMode[0].AddString(_TEXT("CW"));
+		m_cboxMode[0].SetItemData(nZIndex, PM_CW_U);
 	}
 	if (m_lReadable[nRigIndex] & PM_CW_L)
 	{
-		nZIndex = m_cboxMode[nRigIndex].AddString(_TEXT("CW-R"));
-		m_cboxMode[nRigIndex].SetItemData(nZIndex, PM_CW_L);
+		nZIndex = m_cboxMode[0].AddString(_TEXT("CW-R"));
+		m_cboxMode[0].SetItemData(nZIndex, PM_CW_L);
 	}
 	if (m_lReadable[nRigIndex] & PM_SSB_U)
 	{
-		nZIndex = m_cboxMode[nRigIndex].AddString(_TEXT("USB"));
-		m_cboxMode[nRigIndex].SetItemData(nZIndex, PM_SSB_U);
+		nZIndex = m_cboxMode[0].AddString(_TEXT("USB"));
+		m_cboxMode[0].SetItemData(nZIndex, PM_SSB_U);
 	}
 	if (m_lReadable[nRigIndex] & PM_SSB_L)
 	{
-		nZIndex = m_cboxMode[nRigIndex].AddString(_TEXT("LSB"));
-		m_cboxMode[nRigIndex].SetItemData(nZIndex, PM_SSB_L);
+		nZIndex = m_cboxMode[0].AddString(_TEXT("LSB"));
+		m_cboxMode[0].SetItemData(nZIndex, PM_SSB_L);
 	}
 	if (m_lReadable[nRigIndex] & PM_DIG_U)
 	{
-		nZIndex = m_cboxMode[nRigIndex].AddString(_TEXT("FSK-R"));
-		m_cboxMode[nRigIndex].SetItemData(nZIndex, PM_DIG_U);
+		nZIndex = m_cboxMode[0].AddString(_TEXT("FSK-R"));
+		m_cboxMode[0].SetItemData(nZIndex, PM_DIG_U);
 	}
 	if (m_lReadable[nRigIndex] & PM_DIG_L)
 	{
-		nZIndex = m_cboxMode[nRigIndex].AddString(_TEXT("FSK"));
-		m_cboxMode[nRigIndex].SetItemData(nZIndex, PM_DIG_L);
+		nZIndex = m_cboxMode[0].AddString(_TEXT("FSK"));
+		m_cboxMode[0].SetItemData(nZIndex, PM_DIG_L);
 	}
 	if (m_lReadable[nRigIndex] & PM_AM)
 	{
-		nZIndex = m_cboxMode[nRigIndex].AddString(_TEXT("AM"));
-		m_cboxMode[nRigIndex].SetItemData(nZIndex, PM_AM);
+		nZIndex = m_cboxMode[0].AddString(_TEXT("AM"));
+		m_cboxMode[0].SetItemData(nZIndex, PM_AM);
 	}
 	if (m_lReadable[nRigIndex] & PM_FM)
 	{
-		nZIndex = m_cboxMode[nRigIndex].AddString(_TEXT("FM"));
-		m_cboxMode[nRigIndex].SetItemData(nZIndex, PM_FM);
+		nZIndex = m_cboxMode[0].AddString(_TEXT("FM"));
+		m_cboxMode[0].SetItemData(nZIndex, PM_FM);
 	}
-	m_cboxMode[nRigIndex].EnableWindow(m_cboxMode[nRigIndex].GetCount());
+	m_cboxMode[0].EnableWindow(m_cboxMode[0].GetCount());
 
 	m_radioVfoA[0].EnableWindow(m_lReadable[0] & (PM_VFOAA|PM_VFOAB|PM_VFOA));
 	m_radioVfoB[0].EnableWindow(m_lReadable[0] & (PM_VFOBA|PM_VFOBB|PM_VFOB));
@@ -421,11 +421,11 @@ HRESULT COmniRIG_ClientDlg::ParamsChange(long RigNumber, long Params)
 		}	
 	}
 	if (Params & PM_FREQB)
-		m_lFreqB[nRigIndex] = pRig->GetFreqB();
+		m_lFreqB[0] = pRig->GetFreqB();
 	if (Params & (PM_CW_U|PM_CW_L|PM_SSB_U|PM_SSB_L|PM_DIG_U|PM_DIG_L|PM_AM|PM_FM))
-		m_cboxMode[nRigIndex].SetCurItem(pRig->GetMode());
+		m_cboxMode[0].SetCurItem(pRig->GetMode());
 	if (Params & (PM_SPLITON|PM_SPLITOFF|PM_VFOAB|PM_VFOBA))
-		m_checkSplit[nRigIndex].SetCheck((pRig->GetSplit() == PM_SPLITON) ? BST_CHECKED : BST_UNCHECKED);
+		m_checkSplit[0].SetCheck((pRig->GetSplit() == PM_SPLITON) ? BST_CHECKED : BST_UNCHECKED);
 	if (Params & (PM_VFOAA|PM_VFOAB|PM_VFOA|PM_VFOBA|PM_VFOBB|PM_VFOB))
 	{
 		int nVfo = pRig->GetVfo();		
