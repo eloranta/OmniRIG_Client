@@ -122,7 +122,7 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_STATIC_R1_RIG, m_staticRig[0]);
 	//DDX_Control(pDX, IDC_STATIC_R2_RIG, m_staticRig[1]);
 	DDX_Control(pDX, IDC_STATIC_R1_STATUS, m_staticStatus[0]);
-	DDX_Control(pDX, IDC_STATIC_R2_STATUS, m_staticStatus[1]);
+	//DDX_Control(pDX, IDC_STATIC_R2_STATUS, m_staticStatus[1]);
 	DDX_Control(pDX, IDC_RADIO_R1_VFO_A, m_radioVfoA[0]);
 	DDX_Control(pDX, IDC_RADIO_R2_VFO_A, m_radioVfoA[1]);
 	DDX_Control(pDX, IDC_RADIO_R1_VFO_B, m_radioVfoB[0]);
@@ -385,7 +385,7 @@ HRESULT COmniRIG_ClientDlg::StatusChange(long RigNumber)
 	int nRigIndex = RigNumber - 1;
 	IRigXPtr pRig = (RigNumber == 1) ? m_pOmniRig->Rig1 : m_pOmniRig->Rig2;
 	LPCTSTR lpszStatus = g_lpszRigStatus[pRig->GetStatus()];
-	m_staticStatus[nRigIndex].SetWindowText(lpszStatus);
+	m_staticStatus[0].SetWindowText(lpszStatus);
 
 	return 0L;
 }
