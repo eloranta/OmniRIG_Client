@@ -124,9 +124,9 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_STATIC_R1_STATUS, m_staticStatus[0]);
 	//DDX_Control(pDX, IDC_STATIC_R2_STATUS, m_staticStatus[1]);
 	DDX_Control(pDX, IDC_RADIO_R1_VFO_A, m_radioVfoA[0]);
-	DDX_Control(pDX, IDC_RADIO_R2_VFO_A, m_radioVfoA[1]);
+	//DDX_Control(pDX, IDC_RADIO_R2_VFO_A, m_radioVfoA[1]);
 	DDX_Control(pDX, IDC_RADIO_R1_VFO_B, m_radioVfoB[0]);
-	DDX_Control(pDX, IDC_RADIO_R2_VFO_B, m_radioVfoB[1]);
+	//DDX_Control(pDX, IDC_RADIO_R2_VFO_B, m_radioVfoB[1]);
 	//DDX_Control(pDX, IDC_SPIN_R1_FREQ, m_spinFreq[0]);
 	//DDX_Control(pDX, IDC_SPIN_R2_FREQ, m_spinFreq[1]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_A, m_spinFreqA[0]);
@@ -360,8 +360,8 @@ HRESULT COmniRIG_ClientDlg::RigTypeChange(long RigNumber)
 	}
 	m_cboxMode[nRigIndex].EnableWindow(m_cboxMode[nRigIndex].GetCount());
 
-	m_radioVfoA[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & (PM_VFOAA|PM_VFOAB|PM_VFOA));
-	m_radioVfoB[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & (PM_VFOBA|PM_VFOBB|PM_VFOB));
+	m_radioVfoA[0].EnableWindow(m_lReadable[0] & (PM_VFOAA|PM_VFOAB|PM_VFOA));
+	m_radioVfoB[0].EnableWindow(m_lReadable[0] & (PM_VFOBA|PM_VFOBB|PM_VFOB));
 
 	m_checkSplit[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_SPLITON);
 
@@ -429,8 +429,8 @@ HRESULT COmniRIG_ClientDlg::ParamsChange(long RigNumber, long Params)
 	if (Params & (PM_VFOAA|PM_VFOAB|PM_VFOA|PM_VFOBA|PM_VFOBB|PM_VFOB))
 	{
 		int nVfo = pRig->GetVfo();		
-		m_radioVfoA[nRigIndex].SetCheck((nVfo & (PM_VFOAA|PM_VFOAB|PM_VFOA)) ? BST_CHECKED : BST_UNCHECKED);
-		m_radioVfoB[nRigIndex].SetCheck((nVfo & (PM_VFOBA|PM_VFOBB|PM_VFOB)) ? BST_CHECKED : BST_UNCHECKED);
+		m_radioVfoA[0].SetCheck((nVfo & (PM_VFOAA|PM_VFOAB|PM_VFOA)) ? BST_CHECKED : BST_UNCHECKED);
+		m_radioVfoB[0].SetCheck((nVfo & (PM_VFOBA|PM_VFOBB|PM_VFOB)) ? BST_CHECKED : BST_UNCHECKED);
 	}
 
 	UpdateData(0);
