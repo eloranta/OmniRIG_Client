@@ -383,7 +383,17 @@ HRESULT COmniRIG_ClientDlg::ParamsChange(long RigNumber, long Params)
 		}
 	}
 	if (Params & PM_FREQB)
+	{
 		m_lFreqB[nRigIndex] = pRig->GetFreqB();
+		CString freqStr;
+		freqStr.Format(_T("%8ld"), m_lFreqB[nRigIndex]);
+		for (int i = 0; i < 8; ++i)
+		{
+			CString digit(freqStr.Mid(i, 1));
+			SetDlgItemText(IDC_DIGIT9 + i, digit);
+		}
+
+	}
 	if (Params & (PM_CW_U|PM_CW_L|PM_SSB_U|PM_SSB_L|PM_DIG_U|PM_DIG_L|PM_AM|PM_FM))
 		m_cboxMode[nRigIndex].SetCurItem(pRig->GetMode());
 	if (Params & (PM_SPLITON|PM_SPLITOFF|PM_VFOAB|PM_VFOBA))

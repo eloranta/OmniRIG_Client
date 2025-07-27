@@ -52,6 +52,14 @@
 #define IDC_DIGIT6                      1040
 #define IDC_DIGIT7                      1041
 #define IDC_DIGIT8                      1042
+#define IDC_DIGIT9                      1043
+#define IDC_DIGIT10                     1044
+#define IDC_DIGIT11                     1045
+#define IDC_DIGIT12                     1046
+#define IDC_DIGIT13                     1047
+#define IDC_DIGIT14                     1048
+#define IDC_DIGIT15                     1049
+#define IDC_DIGIT16                     1050
 
 // Next default values for new objects
 // 
