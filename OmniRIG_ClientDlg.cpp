@@ -109,7 +109,7 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Text(pDX, IDC_R2_FREQ_B, m_lFreqB[1]);
 	DDX_Control(pDX, IDC_R1_FREQ_B, m_editFreqB[0]);
 	DDX_Control(pDX, IDC_R2_FREQ_B, m_editFreqB[1]);
-	DDX_Control(pDX, IDC_BTN_R1_FREQ, m_btnFreq[0]);
+	//DDX_Control(pDX, IDC_BTN_R1_FREQ, m_btnFreq[0]);
 	DDX_Control(pDX, IDC_BTN_R2_FREQ, m_btnFreq[1]);
 	DDX_Control(pDX, IDC_BTN_R1_FREQ_A, m_btnFreqA[0]);
 	DDX_Control(pDX, IDC_BTN_R2_FREQ_A, m_btnFreqA[1]);
@@ -312,7 +312,7 @@ HRESULT COmniRIG_ClientDlg::RigTypeChange(long RigNumber)
 	m_spinFreqA[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQA);
 	m_spinFreqB[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQB);
 
-	m_btnFreq[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQ);
+	//m_btnFreq[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQ);
 	m_btnFreqA[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQA);
 	m_btnFreqB[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQB);
 
