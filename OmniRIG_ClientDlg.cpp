@@ -95,43 +95,20 @@ COmniRIG_ClientDlg::~COmniRIG_ClientDlg()
 void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
-	//DDX_Control(pDX, IDC_DIALOG_VISIBLE, m_btnDialogVisible);
-	//DDX_Text(pDX, IDC_R1_FREQ, m_lFreq[0]);
-	//DDX_Text(pDX, IDC_R2_FREQ, m_lFreq[1]);
-	//DDX_Control(pDX, IDC_R1_FREQ, m_editFreq[0]);
-	//DDX_Control(pDX, IDC_R2_FREQ, m_editFreq[1]);
 	DDX_Text(pDX, IDC_R1_FREQ_A, m_lFreqA[0]);
-	//DDX_Text(pDX, IDC_R2_FREQ_A, m_lFreqA[1]);
 	DDX_Control(pDX, IDC_R1_FREQ_A, m_editFreqA[0]);
-	//DDX_Control(pDX, IDC_R2_FREQ_A, m_editFreqA[1]);
 	DDX_Text(pDX, IDC_R1_FREQ_B, m_lFreqB[0]);
-	//DDX_Text(pDX, IDC_R2_FREQ_B, m_lFreqB[1]);
 	DDX_Control(pDX, IDC_R1_FREQ_B, m_editFreqB[0]);
-	//DDX_Control(pDX, IDC_R2_FREQ_B, m_editFreqB[1]);
-	//DDX_Control(pDX, IDC_BTN_R1_FREQ, m_btnFreq[0]);
-	//DDX_Control(pDX, IDC_BTN_R2_FREQ, m_btnFreq[1]);
 	DDX_Control(pDX, IDC_BTN_R1_FREQ_A, m_btnFreqA[0]);
-	//DDX_Control(pDX, IDC_BTN_R2_FREQ_A, m_btnFreqA[1]);
 	DDX_Control(pDX, IDC_BTN_R1_FREQ_B, m_btnFreqB[0]);
-	//DDX_Control(pDX, IDC_BTN_R2_FREQ_B, m_btnFreqB[1]);
 	DDX_Control(pDX, IDC_R1_MODE, m_cboxMode[0]);
-	//DDX_Control(pDX, IDC_R2_MODE, m_cboxMode[1]);
 	DDX_Control(pDX, IDC_CHECK_R1_SPLIT, m_checkSplit[0]);
-	//DDX_Control(pDX, IDC_CHECK_R2_SPLIT, m_checkSplit[1]);
 	DDX_Control(pDX, IDC_STATIC_R1_RIG, m_staticRig[0]);
-	//DDX_Control(pDX, IDC_STATIC_R2_RIG, m_staticRig[1]);
 	DDX_Control(pDX, IDC_STATIC_R1_STATUS, m_staticStatus[0]);
-	//DDX_Control(pDX, IDC_STATIC_R2_STATUS, m_staticStatus[1]);
 	DDX_Control(pDX, IDC_RADIO_R1_VFO_A, m_radioVfoA[0]);
-	//DDX_Control(pDX, IDC_RADIO_R2_VFO_A, m_radioVfoA[1]);
 	DDX_Control(pDX, IDC_RADIO_R1_VFO_B, m_radioVfoB[0]);
-	//DDX_Control(pDX, IDC_RADIO_R2_VFO_B, m_radioVfoB[1]);
-	//DDX_Control(pDX, IDC_SPIN_R1_FREQ, m_spinFreq[0]);
-	//DDX_Control(pDX, IDC_SPIN_R2_FREQ, m_spinFreq[1]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_A, m_spinFreqA[0]);
-	//DDX_Control(pDX, IDC_SPIN_R2_FREQ_A, m_spinFreqA[1]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_B, m_spinFreqB[0]);
-	//DDX_Control(pDX, IDC_SPIN_R2_FREQ_B, m_spinFreqB[1]);
 }
 
 BEGIN_MESSAGE_MAP(COmniRIG_ClientDlg, CDialog)
@@ -139,14 +116,9 @@ BEGIN_MESSAGE_MAP(COmniRIG_ClientDlg, CDialog)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_DIALOG_VISIBLE, &COmniRIG_ClientDlg::OnBnClickedDialogVisible)
-	//ON_BN_CLICKED(IDC_BTN_R1_FREQ, &COmniRIG_ClientDlg::OnBnClickedBtnR1Freq)
-	//ON_BN_CLICKED(IDC_BTN_R2_FREQ, &COmniRIG_ClientDlg::OnBnClickedBtnR2Freq)
 	ON_BN_CLICKED(IDC_BTN_R1_FREQ_A, &COmniRIG_ClientDlg::OnBnClickedBtnR1FreqA)
-	//ON_BN_CLICKED(IDC_BTN_R2_FREQ_A, &COmniRIG_ClientDlg::OnBnClickedBtnR2FreqA)
 	ON_BN_CLICKED(IDC_BTN_R1_FREQ_B, &COmniRIG_ClientDlg::OnBnClickedBtnR1FreqB)
-	//ON_BN_CLICKED(IDC_BTN_R2_FREQ_B, &COmniRIG_ClientDlg::OnBnClickedBtnR2FreqB)
 	ON_CBN_SELCHANGE(IDC_R1_MODE, &COmniRIG_ClientDlg::OnCbnSelchangeR1Mode)
-	//ON_CBN_SELCHANGE(IDC_R2_MODE, &COmniRIG_ClientDlg::OnCbnSelchangeR2Mode)
 	ON_BN_CLICKED(IDC_CHECK_R1_SPLIT, &COmniRIG_ClientDlg::OnBnClickedCheckR1Split)
 	ON_BN_CLICKED(IDC_CHECK_R2_SPLIT, &COmniRIG_ClientDlg::OnBnClickedCheckR2Split)
 	ON_BN_CLICKED(IDC_RADIO_R1_VFO_A, &COmniRIG_ClientDlg::OnBnClickedRadioR1VfoA)
@@ -196,12 +168,8 @@ BOOL COmniRIG_ClientDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
-//	for(int nIndex = 0; nIndex < MAX_RADIO; nIndex++)
-//	{
-		//m_spinFreq[0].SetRange32(0, 0x7FFFFFFF);
-		m_spinFreqA[0].SetRange32(0, 0x7FFFFFFF);
-		m_spinFreqB[0].SetRange32(0, 0x7FFFFFFF);
-//	}
+	m_spinFreqA[0].SetRange32(0, 0x7FFFFFFF);
+	m_spinFreqB[0].SetRange32(0, 0x7FFFFFFF);
 
 	try 
 	{
@@ -289,8 +257,6 @@ HCURSOR COmniRIG_ClientDlg::OnQueryDragIcon()
 
 HRESULT COmniRIG_ClientDlg::VisibleChange()
 {
-	BOOL bIsVisible = m_pOmniRig->GetDialogVisible();
-	//m_btnDialogVisible.SetCheck(bIsVisible ? BST_CHECKED : BST_UNCHECKED);
 	return 0L;
 }
 
@@ -305,15 +271,12 @@ HRESULT COmniRIG_ClientDlg::RigTypeChange(long RigNumber)
 	m_lReadable[nRigIndex] = pRig->GetReadableParams();
 	m_lWriteable[nRigIndex] = pRig->GetWriteableParams();
 
-	//m_editFreq[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQ);
 	m_editFreqA[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQA);
 	m_editFreqB[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQB);
 
-	//m_spinFreq[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQ);
 	m_spinFreqA[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQA);
 	m_spinFreqB[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQB);
 
-	//m_btnFreq[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQ);
 	m_btnFreqA[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQA);
 	m_btnFreqB[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQB);
 
@@ -404,8 +367,6 @@ HRESULT COmniRIG_ClientDlg::ParamsChange(long RigNumber, long Params)
 
 	IRigXPtr pRig = (RigNumber == 1) ? m_pOmniRig->Rig1 : m_pOmniRig->Rig2;
 
-	//if (Params & PM_FREQ)
-	//	m_lFreq[nRigIndex] = pRig->GetFreq();
 	if (Params & PM_FREQA)
 		m_lFreqA[nRigIndex] = pRig->GetFreqA();
 	if (Params & PM_FREQB)
@@ -519,20 +480,14 @@ void COmniRIG_ClientDlg::SetSplit(long RigNumber, BOOL bIsSplit)
 
 void COmniRIG_ClientDlg::OnBnClickedDialogVisible()
 {
-	//BOOL bIsVisible = (m_btnDialogVisible.GetCheck() == BST_CHECKED);
-	//m_pOmniRig->PutDialogVisible(bIsVisible);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedBtnR1Freq()
 {
-	//UpdateData(TRUE);
-	//SetFreq(RIG1, m_lFreq[0]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedBtnR2Freq()
 {
-	//UpdateData(TRUE);
-	//SetFreq(RIG2, m_lFreq[1]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedBtnR1FreqA()
@@ -555,8 +510,6 @@ void COmniRIG_ClientDlg::OnBnClickedBtnR1FreqB()
 
 void COmniRIG_ClientDlg::OnBnClickedBtnR2FreqB()
 {
-	//UpdateData(TRUE);
-	//SetFreqB(RIG2, m_lFreq[1]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedRadioR1VfoA()
@@ -587,8 +540,6 @@ void COmniRIG_ClientDlg::OnCbnSelchangeR1Mode()
 
 void COmniRIG_ClientDlg::OnCbnSelchangeR2Mode()
 {
-	//RigParamX mode = (RigParamX) m_cboxMode[1].GetCurItem();
-	//SetMode(RIG2, mode);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedCheckR1Split()
