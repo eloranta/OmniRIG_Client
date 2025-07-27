@@ -96,7 +96,7 @@ COmniRIG_ClientDlg::~COmniRIG_ClientDlg()
 void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_DIALOG_VISIBLE, m_btnDialogVisible);
+	//DDX_Control(pDX, IDC_DIALOG_VISIBLE, m_btnDialogVisible);
 	//DDX_Text(pDX, IDC_R1_FREQ, m_lFreq[0]);
 	//DDX_Text(pDX, IDC_R2_FREQ, m_lFreq[1]);
 	//DDX_Control(pDX, IDC_R1_FREQ, m_editFreq[0]);
@@ -291,7 +291,7 @@ HCURSOR COmniRIG_ClientDlg::OnQueryDragIcon()
 HRESULT COmniRIG_ClientDlg::VisibleChange()
 {
 	BOOL bIsVisible = m_pOmniRig->GetDialogVisible();
-	m_btnDialogVisible.SetCheck(bIsVisible ? BST_CHECKED : BST_UNCHECKED);
+	//m_btnDialogVisible.SetCheck(bIsVisible ? BST_CHECKED : BST_UNCHECKED);
 	return 0L;
 }
 
