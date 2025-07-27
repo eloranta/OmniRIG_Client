@@ -114,7 +114,7 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_BTN_R1_FREQ_A, m_btnFreqA[0]);
 	DDX_Control(pDX, IDC_BTN_R2_FREQ_A, m_btnFreqA[1]);
 	DDX_Control(pDX, IDC_BTN_R1_FREQ_B, m_btnFreqB[0]);
-	DDX_Control(pDX, IDC_BTN_R2_FREQ_B, m_btnFreqB[1]);
+	//DDX_Control(pDX, IDC_BTN_R2_FREQ_B, m_btnFreqB[1]);
 	DDX_Control(pDX, IDC_R1_MODE, m_cboxMode[0]);
 	DDX_Control(pDX, IDC_R2_MODE, m_cboxMode[1]);
 	DDX_Control(pDX, IDC_CHECK_R1_SPLIT, m_checkSplit[0]);
@@ -145,7 +145,7 @@ BEGIN_MESSAGE_MAP(COmniRIG_ClientDlg, CDialog)
 	ON_BN_CLICKED(IDC_BTN_R1_FREQ_A, &COmniRIG_ClientDlg::OnBnClickedBtnR1FreqA)
 	ON_BN_CLICKED(IDC_BTN_R2_FREQ_A, &COmniRIG_ClientDlg::OnBnClickedBtnR2FreqA)
 	ON_BN_CLICKED(IDC_BTN_R1_FREQ_B, &COmniRIG_ClientDlg::OnBnClickedBtnR1FreqB)
-	ON_BN_CLICKED(IDC_BTN_R2_FREQ_B, &COmniRIG_ClientDlg::OnBnClickedBtnR2FreqB)
+	//ON_BN_CLICKED(IDC_BTN_R2_FREQ_B, &COmniRIG_ClientDlg::OnBnClickedBtnR2FreqB)
 	ON_CBN_SELCHANGE(IDC_R1_MODE, &COmniRIG_ClientDlg::OnCbnSelchangeR1Mode)
 	ON_CBN_SELCHANGE(IDC_R2_MODE, &COmniRIG_ClientDlg::OnCbnSelchangeR2Mode)
 	ON_BN_CLICKED(IDC_CHECK_R1_SPLIT, &COmniRIG_ClientDlg::OnBnClickedCheckR1Split)
@@ -314,7 +314,7 @@ HRESULT COmniRIG_ClientDlg::RigTypeChange(long RigNumber)
 
 	//m_btnFreq[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQ);
 	m_btnFreqA[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQA);
-	m_btnFreqB[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQB);
+	//m_btnFreqB[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQB);
 
 	int nZIndex;
 	m_cboxMode[nRigIndex].ResetContent();
