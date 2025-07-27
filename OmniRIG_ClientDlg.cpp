@@ -123,9 +123,9 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_STATIC_R1_STATUS, m_staticStatus[0]);
 	//DDX_Control(pDX, IDC_STATIC_R2_STATUS, m_staticStatus[1]);
 	DDX_Control(pDX, IDC_RADIO_R1_VFO_A, m_radioVfoA[0]);
-	DDX_Control(pDX, IDC_RADIO_R2_VFO_A, m_radioVfoA[1]);
+	//DDX_Control(pDX, IDC_RADIO_R2_VFO_A, m_radioVfoA[1]);
 	DDX_Control(pDX, IDC_RADIO_R1_VFO_B, m_radioVfoB[0]);
-	DDX_Control(pDX, IDC_RADIO_R2_VFO_B, m_radioVfoB[1]);
+	//DDX_Control(pDX, IDC_RADIO_R2_VFO_B, m_radioVfoB[1]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ, m_spinFreq[0]);
 	//DDX_Control(pDX, IDC_SPIN_R2_FREQ, m_spinFreq[1]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_A, m_spinFreqA[0]);
