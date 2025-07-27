@@ -129,7 +129,7 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ, m_spinFreq[0]);
 	//DDX_Control(pDX, IDC_SPIN_R2_FREQ, m_spinFreq[1]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_A, m_spinFreqA[0]);
-	DDX_Control(pDX, IDC_SPIN_R2_FREQ_A, m_spinFreqA[1]);
+	//DDX_Control(pDX, IDC_SPIN_R2_FREQ_A, m_spinFreqA[1]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_B, m_spinFreqB[0]);
 	DDX_Control(pDX, IDC_SPIN_R2_FREQ_B, m_spinFreqB[1]);
 }
