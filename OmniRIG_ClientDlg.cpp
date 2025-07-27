@@ -109,7 +109,7 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_R1_FREQ_B, m_editFreqB[0]);
 	DDX_Control(pDX, IDC_R2_FREQ_B, m_editFreqB[1]);
 	DDX_Control(pDX, IDC_BTN_R1_FREQ, m_btnFreq[0]);
-	DDX_Control(pDX, IDC_BTN_R2_FREQ, m_btnFreq[1]);
+	//DDX_Control(pDX, IDC_BTN_R2_FREQ, m_btnFreq[1]);
 	DDX_Control(pDX, IDC_BTN_R1_FREQ_A, m_btnFreqA[0]);
 	DDX_Control(pDX, IDC_BTN_R2_FREQ_A, m_btnFreqA[1]);
 	DDX_Control(pDX, IDC_BTN_R1_FREQ_B, m_btnFreqB[0]);
