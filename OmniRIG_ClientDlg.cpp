@@ -130,9 +130,9 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	//DDX_Control(pDX, IDC_SPIN_R1_FREQ, m_spinFreq[0]);
 	//DDX_Control(pDX, IDC_SPIN_R2_FREQ, m_spinFreq[1]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_A, m_spinFreqA[0]);
-	DDX_Control(pDX, IDC_SPIN_R2_FREQ_A, m_spinFreqA[1]);
+	//DDX_Control(pDX, IDC_SPIN_R2_FREQ_A, m_spinFreqA[1]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_B, m_spinFreqB[0]);
-	DDX_Control(pDX, IDC_SPIN_R2_FREQ_B, m_spinFreqB[1]);
+	//DDX_Control(pDX, IDC_SPIN_R2_FREQ_B, m_spinFreqB[1]);
 }
 
 BEGIN_MESSAGE_MAP(COmniRIG_ClientDlg, CDialog)
@@ -200,8 +200,8 @@ BOOL COmniRIG_ClientDlg::OnInitDialog()
 	for(int nIndex = 0; nIndex < MAX_RADIO; nIndex++)
 	{
 		//m_spinFreq[nIndex].SetRange32(0, 0x7FFFFFFF);
-		m_spinFreqA[nIndex].SetRange32(0, 0x7FFFFFFF);
-		m_spinFreqB[nIndex].SetRange32(0, 0x7FFFFFFF);
+		m_spinFreqA[0].SetRange32(0, 0x7FFFFFFF);
+		m_spinFreqB[0].SetRange32(0, 0x7FFFFFFF);
 	}
 
 	try 
@@ -309,8 +309,8 @@ HRESULT COmniRIG_ClientDlg::RigTypeChange(long RigNumber)
 	m_editFreqB[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQB);
 
 	//m_spinFreq[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQ);
-	m_spinFreqA[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQA);
-	m_spinFreqB[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQB);
+	m_spinFreqA[0].EnableWindow(m_lReadable[0] & PM_FREQA);
+	m_spinFreqB[0].EnableWindow(m_lReadable[0] & PM_FREQB);
 
 	//m_btnFreq[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQ);
 	m_btnFreqA[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQA);
