@@ -99,7 +99,7 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_DIALOG_VISIBLE, m_btnDialogVisible);
 	DDX_Text(pDX, IDC_R1_FREQ, m_lFreq[0]);
 	DDX_Text(pDX, IDC_R2_FREQ, m_lFreq[1]);
-	DDX_Control(pDX, IDC_R1_FREQ, m_editFreq[0]);
+	//DDX_Control(pDX, IDC_R1_FREQ, m_editFreq[0]);
 	DDX_Control(pDX, IDC_R2_FREQ, m_editFreq[1]);
 	DDX_Text(pDX, IDC_R1_FREQ_A, m_lFreqA[0]);
 	DDX_Text(pDX, IDC_R2_FREQ_A, m_lFreqA[1]);
@@ -304,7 +304,7 @@ HRESULT COmniRIG_ClientDlg::RigTypeChange(long RigNumber)
 	m_lReadable[nRigIndex] = pRig->GetReadableParams();
 	m_lWriteable[nRigIndex] = pRig->GetWriteableParams();
 
-	m_editFreq[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQ);
+	//m_editFreq[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQ);
 	m_editFreqA[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQA);
 	m_editFreqB[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQB);
 
