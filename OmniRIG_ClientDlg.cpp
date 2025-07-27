@@ -111,7 +111,7 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_BTN_R1_FREQ, m_btnFreq[0]);
 	//DDX_Control(pDX, IDC_BTN_R2_FREQ, m_btnFreq[1]);
 	DDX_Control(pDX, IDC_BTN_R1_FREQ_A, m_btnFreqA[0]);
-	DDX_Control(pDX, IDC_BTN_R2_FREQ_A, m_btnFreqA[1]);
+	//DDX_Control(pDX, IDC_BTN_R2_FREQ_A, m_btnFreqA[1]);
 	DDX_Control(pDX, IDC_BTN_R1_FREQ_B, m_btnFreqB[0]);
 	DDX_Control(pDX, IDC_BTN_R2_FREQ_B, m_btnFreqB[1]);
 	DDX_Control(pDX, IDC_R1_MODE, m_cboxMode[0]);
@@ -142,7 +142,7 @@ BEGIN_MESSAGE_MAP(COmniRIG_ClientDlg, CDialog)
 	ON_BN_CLICKED(IDC_BTN_R1_FREQ, &COmniRIG_ClientDlg::OnBnClickedBtnR1Freq)
 	ON_BN_CLICKED(IDC_BTN_R2_FREQ, &COmniRIG_ClientDlg::OnBnClickedBtnR2Freq)
 	ON_BN_CLICKED(IDC_BTN_R1_FREQ_A, &COmniRIG_ClientDlg::OnBnClickedBtnR1FreqA)
-	ON_BN_CLICKED(IDC_BTN_R2_FREQ_A, &COmniRIG_ClientDlg::OnBnClickedBtnR2FreqA)
+	//ON_BN_CLICKED(IDC_BTN_R2_FREQ_A, &COmniRIG_ClientDlg::OnBnClickedBtnR2FreqA)
 	ON_BN_CLICKED(IDC_BTN_R1_FREQ_B, &COmniRIG_ClientDlg::OnBnClickedBtnR1FreqB)
 	ON_BN_CLICKED(IDC_BTN_R2_FREQ_B, &COmniRIG_ClientDlg::OnBnClickedBtnR2FreqB)
 	ON_CBN_SELCHANGE(IDC_R1_MODE, &COmniRIG_ClientDlg::OnCbnSelchangeR1Mode)
