@@ -135,7 +135,6 @@ BEGIN
     LTEXT           "Status: ",IDC_STATIC,19,46,32,8
     LTEXT           "Static",IDC_STATIC_R1_RIG,54,33,63,8
     LTEXT           "Static",IDC_STATIC_R1_STATUS,54,46,63,8
-    LTEXT           "Static",IDC_STATIC_R2_STATUS,177,46,63,8
 END
 
 
