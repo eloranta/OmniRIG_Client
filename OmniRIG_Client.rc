@@ -114,6 +114,14 @@ BEGIN
     LTEXT           "Status: ",IDC_STATIC,7,20,32,8
     LTEXT           "Static",IDC_STATIC_R1_RIG,42,7,63,8
     LTEXT           "Static",IDC_STATIC_R1_STATUS,42,20,63,8
+    CTEXT           ".",IDC_DIGIT1,39,52,8,8
+    CTEXT           ".",IDC_DIGIT2,49,52,8,8
+    CTEXT           ".",IDC_DIGIT3,58,52,8,8
+    CTEXT           ".",IDC_DIGIT4,67,52,8,8
+    CTEXT           ".",IDC_DIGIT5,77,52,8,8
+    CTEXT           ".",IDC_DIGIT6,86,52,8,8
+    CTEXT           ".",IDC_DIGIT7,95,52,8,8
+    CTEXT           ".",IDC_DIGIT8,105,52,8,8
 END
 
 

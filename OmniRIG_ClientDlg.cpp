@@ -372,7 +372,16 @@ HRESULT COmniRIG_ClientDlg::ParamsChange(long RigNumber, long Params)
 	IRigXPtr pRig = (RigNumber == 1) ? m_pOmniRig->Rig1 : m_pOmniRig->Rig2;
 
 	if (Params & PM_FREQA)
+	{
 		m_lFreqA[nRigIndex] = pRig->GetFreqA();
+		CString freqStr;
+		freqStr.Format(_T("%08ld"), m_lFreqA[nRigIndex]);
+		for (int i = 0; i < 8; ++i)
+		{
+			CString digit(freqStr.Mid(i, 1));
+			SetDlgItemText(IDC_DIGIT1 + i, digit);
+		}
+	}
 	if (Params & PM_FREQB)
 		m_lFreqB[nRigIndex] = pRig->GetFreqB();
 	if (Params & (PM_CW_U|PM_CW_L|PM_SSB_U|PM_SSB_L|PM_DIG_U|PM_DIG_L|PM_AM|PM_FM))

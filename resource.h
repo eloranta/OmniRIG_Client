@@ -42,8 +42,16 @@
 #define IDC_RADIO_R1_VFO_A              1033
 #define IDC_RADIO_R1_VFO_B              1034
 #define IDC_RADIO_R2_VFO_A              1035
+#define IDC_DIGIT1                      1035
 #define IDC_RADIO_R1_VFO_B2             1036
 #define IDC_RADIO_R2_VFO_B              1036
+#define IDC_DIGIT2                      1036
+#define IDC_DIGIT3                      1037
+#define IDC_DIGIT4                      1038
+#define IDC_DIGIT5                      1039
+#define IDC_DIGIT6                      1040
+#define IDC_DIGIT7                      1041
+#define IDC_DIGIT8                      1042
 
 // Next default values for new objects
 // 
@@ -51,7 +59,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        130
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1034
+#define _APS_NEXT_CONTROL_VALUE         1036
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
