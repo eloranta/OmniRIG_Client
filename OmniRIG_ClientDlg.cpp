@@ -90,6 +90,7 @@ COmniRIG_ClientDlg::~COmniRIG_ClientDlg()
 		AfxConnectionUnadvise(m_pOmniRig, __uuidof(IOmniRigXEvents), pUnkSink, FALSE, m_dwCookie);
 		m_dwCookie = 0L;
 	}
+	m_brushBg.DeleteObject();
 }
 
 void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
