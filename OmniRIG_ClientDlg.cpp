@@ -105,9 +105,9 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_R1_FREQ_A, m_editFreqA[0]);
 	//DDX_Control(pDX, IDC_R2_FREQ_A, m_editFreqA[1]);
 	DDX_Text(pDX, IDC_R1_FREQ_B, m_lFreqB[0]);
-	DDX_Text(pDX, IDC_R2_FREQ_B, m_lFreqB[1]);
+	//DDX_Text(pDX, IDC_R2_FREQ_B, m_lFreqB[1]);
 	DDX_Control(pDX, IDC_R1_FREQ_B, m_editFreqB[0]);
-	DDX_Control(pDX, IDC_R2_FREQ_B, m_editFreqB[1]);
+	//DDX_Control(pDX, IDC_R2_FREQ_B, m_editFreqB[1]);
 	DDX_Control(pDX, IDC_BTN_R1_FREQ, m_btnFreq[0]);
 	//DDX_Control(pDX, IDC_BTN_R2_FREQ, m_btnFreq[1]);
 	DDX_Control(pDX, IDC_BTN_R1_FREQ_A, m_btnFreqA[0]);
@@ -131,7 +131,7 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_A, m_spinFreqA[0]);
 	//DDX_Control(pDX, IDC_SPIN_R2_FREQ_A, m_spinFreqA[1]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_B, m_spinFreqB[0]);
-	DDX_Control(pDX, IDC_SPIN_R2_FREQ_B, m_spinFreqB[1]);
+	//DDX_Control(pDX, IDC_SPIN_R2_FREQ_B, m_spinFreqB[1]);
 }
 
 BEGIN_MESSAGE_MAP(COmniRIG_ClientDlg, CDialog)
