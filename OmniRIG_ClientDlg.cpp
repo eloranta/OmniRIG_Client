@@ -127,7 +127,7 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_RADIO_R1_VFO_B, m_radioVfoB[0]);
 	DDX_Control(pDX, IDC_RADIO_R2_VFO_B, m_radioVfoB[1]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ, m_spinFreq[0]);
-	DDX_Control(pDX, IDC_SPIN_R2_FREQ, m_spinFreq[1]);
+	//DDX_Control(pDX, IDC_SPIN_R2_FREQ, m_spinFreq[1]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_A, m_spinFreqA[0]);
 	DDX_Control(pDX, IDC_SPIN_R2_FREQ_A, m_spinFreqA[1]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_B, m_spinFreqB[0]);
@@ -196,12 +196,12 @@ BOOL COmniRIG_ClientDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
-	for(int nIndex = 0; nIndex < MAX_RADIO; nIndex++)
-	{
-		m_spinFreq[nIndex].SetRange32(0, 0x7FFFFFFF);
-		m_spinFreqA[nIndex].SetRange32(0, 0x7FFFFFFF);
-		m_spinFreqB[nIndex].SetRange32(0, 0x7FFFFFFF);
-	}
+//	for(int nIndex = 0; nIndex < MAX_RADIO; nIndex++)
+//	{
+		m_spinFreq[0].SetRange32(0, 0x7FFFFFFF);
+		m_spinFreqA[0].SetRange32(0, 0x7FFFFFFF);
+		m_spinFreqB[0].SetRange32(0, 0x7FFFFFFF);
+//	}
 
 	try 
 	{
