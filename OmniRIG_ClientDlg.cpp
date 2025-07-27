@@ -101,9 +101,9 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_R1_FREQ, m_editFreq[0]);
 	//DDX_Control(pDX, IDC_R2_FREQ, m_editFreq[1]);
 	DDX_Text(pDX, IDC_R1_FREQ_A, m_lFreqA[0]);
-	DDX_Text(pDX, IDC_R2_FREQ_A, m_lFreqA[1]);
+	//DDX_Text(pDX, IDC_R2_FREQ_A, m_lFreqA[1]);
 	DDX_Control(pDX, IDC_R1_FREQ_A, m_editFreqA[0]);
-	DDX_Control(pDX, IDC_R2_FREQ_A, m_editFreqA[1]);
+	//DDX_Control(pDX, IDC_R2_FREQ_A, m_editFreqA[1]);
 	DDX_Text(pDX, IDC_R1_FREQ_B, m_lFreqB[0]);
 	DDX_Text(pDX, IDC_R2_FREQ_B, m_lFreqB[1]);
 	DDX_Control(pDX, IDC_R1_FREQ_B, m_editFreqB[0]);
