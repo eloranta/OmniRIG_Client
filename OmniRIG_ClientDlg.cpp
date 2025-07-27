@@ -375,7 +375,7 @@ HRESULT COmniRIG_ClientDlg::ParamsChange(long RigNumber, long Params)
 	{
 		m_lFreqA[nRigIndex] = pRig->GetFreqA();
 		CString freqStr;
-		freqStr.Format(_T("%08ld"), m_lFreqA[nRigIndex]);
+		freqStr.Format(_T("%8ld"), m_lFreqA[nRigIndex]);
 		for (int i = 0; i < 8; ++i)
 		{
 			CString digit(freqStr.Mid(i, 1));
