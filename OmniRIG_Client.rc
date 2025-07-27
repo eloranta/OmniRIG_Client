@@ -13,13 +13,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (U.S.) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
-#endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -65,7 +63,8 @@ END
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "res\\OmniRIG_Client.ico"
-#endif    // English (U.S.) resources
+
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -73,10 +72,8 @@ IDR_MAINFRAME           ICON                    "res\\OmniRIG_Client.ico"
 // French (France) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
-#ifdef _WIN32
 LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
 #pragma code_page(1252)
-#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -126,7 +123,6 @@ BEGIN
     CONTROL         "VFO B",IDC_RADIO_R2_VFO_B,"Button",BS_AUTORADIOBUTTON,200,144,35,10
     COMBOBOX        IDC_R2_MODE,191,161,48,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     CONTROL         "SPLIT",IDC_CHECK_R2_SPLIT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,145,179,34,10
-    CONTROL         "Dialog Visible",IDC_DIALOG_VISIBLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,7,57,10
     LTEXT           "Freq",IDC_STATIC,20,58,16,8
     LTEXT           "Freq A",IDC_STATIC,20,85,22,8
     LTEXT           "Freq B",IDC_STATIC,20,111,22,8
@@ -193,7 +189,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     IDD_ABOUTBOX, DIALOG
     BEGIN
@@ -216,10 +212,21 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 //
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_OMNIRIG_CLIENT_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
 // String Table
 //
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_ABOUTBOX            "&About OmniRIG_Client..."
 END
