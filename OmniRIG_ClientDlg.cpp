@@ -112,13 +112,13 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	//DDX_Control(pDX, IDC_BTN_R1_FREQ, m_btnFreq[0]);
 	//DDX_Control(pDX, IDC_BTN_R2_FREQ, m_btnFreq[1]);
 	DDX_Control(pDX, IDC_BTN_R1_FREQ_A, m_btnFreqA[0]);
-	DDX_Control(pDX, IDC_BTN_R2_FREQ_A, m_btnFreqA[1]);
+	//DDX_Control(pDX, IDC_BTN_R2_FREQ_A, m_btnFreqA[1]);
 	DDX_Control(pDX, IDC_BTN_R1_FREQ_B, m_btnFreqB[0]);
 	//DDX_Control(pDX, IDC_BTN_R2_FREQ_B, m_btnFreqB[1]);
 	DDX_Control(pDX, IDC_R1_MODE, m_cboxMode[0]);
 	//DDX_Control(pDX, IDC_R2_MODE, m_cboxMode[1]);
 	DDX_Control(pDX, IDC_CHECK_R1_SPLIT, m_checkSplit[0]);
-	DDX_Control(pDX, IDC_CHECK_R2_SPLIT, m_checkSplit[1]);
+	//DDX_Control(pDX, IDC_CHECK_R2_SPLIT, m_checkSplit[1]);
 	DDX_Control(pDX, IDC_STATIC_R1_RIG, m_staticRig[0]);
 	//DDX_Control(pDX, IDC_STATIC_R2_RIG, m_staticRig[1]);
 	DDX_Control(pDX, IDC_STATIC_R1_STATUS, m_staticStatus[0]);
@@ -313,8 +313,8 @@ HRESULT COmniRIG_ClientDlg::RigTypeChange(long RigNumber)
 	m_spinFreqB[0].EnableWindow(m_lReadable[0] & PM_FREQB);
 
 	//m_btnFreq[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQ);
-	m_btnFreqA[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQA);
-	//m_btnFreqB[nRigIndex].EnableWindow(m_lWriteable[nRigIndex] & PM_FREQB);
+	m_btnFreqA[0].EnableWindow(m_lWriteable[0] & PM_FREQA);
+	m_btnFreqB[0].EnableWindow(m_lWriteable[0] & PM_FREQB);
 
 	int nZIndex;
 	m_cboxMode[0].ResetContent();
@@ -363,7 +363,7 @@ HRESULT COmniRIG_ClientDlg::RigTypeChange(long RigNumber)
 	m_radioVfoA[0].EnableWindow(m_lReadable[0] & (PM_VFOAA|PM_VFOAB|PM_VFOA));
 	m_radioVfoB[0].EnableWindow(m_lReadable[0] & (PM_VFOBA|PM_VFOBB|PM_VFOB));
 
-	m_checkSplit[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_SPLITON);
+	m_checkSplit[0].EnableWindow(m_lReadable[0] & PM_SPLITON);
 
 	ParamsChange(RigNumber, PM_FREQ);
 	ParamsChange(RigNumber, PM_FREQA);
@@ -611,6 +611,6 @@ void COmniRIG_ClientDlg::OnBnClickedCheckR1Split()
 
 void COmniRIG_ClientDlg::OnBnClickedCheckR2Split()
 {
-	BOOL bSplitToggle = (m_checkSplit[1].GetCheck() == BST_CHECKED);
-	SetSplit(RIG2, bSplitToggle);
+	//BOOL bSplitToggle = (m_checkSplit[1].GetCheck() == BST_CHECKED);
+	//SetSplit(RIG2, bSplitToggle);
 }
