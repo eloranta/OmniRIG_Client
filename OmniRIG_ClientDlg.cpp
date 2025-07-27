@@ -97,9 +97,9 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	CDialog::DoDataExchange(pDX);
 	//DDX_Control(pDX, IDC_DIALOG_VISIBLE, m_btnDialogVisible);
 	DDX_Text(pDX, IDC_R1_FREQ, m_lFreq[0]);
-	DDX_Text(pDX, IDC_R2_FREQ, m_lFreq[1]);
+	//DDX_Text(pDX, IDC_R2_FREQ, m_lFreq[1]);
 	DDX_Control(pDX, IDC_R1_FREQ, m_editFreq[0]);
-	DDX_Control(pDX, IDC_R2_FREQ, m_editFreq[1]);
+	//DDX_Control(pDX, IDC_R2_FREQ, m_editFreq[1]);
 	DDX_Text(pDX, IDC_R1_FREQ_A, m_lFreqA[0]);
 	DDX_Text(pDX, IDC_R2_FREQ_A, m_lFreqA[1]);
 	DDX_Control(pDX, IDC_R1_FREQ_A, m_editFreqA[0]);
@@ -394,6 +394,7 @@ HRESULT COmniRIG_ClientDlg::StatusChange(long RigNumber)
 
 HRESULT COmniRIG_ClientDlg::ParamsChange(long RigNumber, long Params)
 {
+	RigNumber = 1;
 	TRACE("IOmniRigXEvents: ParamsChange (RigNumber=%ld, Params=%ld)\n", RigNumber, Params);
 	
 	if (RigNumber < 1 || RigNumber > MAX_RADIO)
@@ -530,8 +531,8 @@ void COmniRIG_ClientDlg::OnBnClickedBtnR1Freq()
 
 void COmniRIG_ClientDlg::OnBnClickedBtnR2Freq()
 {
-	UpdateData(TRUE);
-	SetFreq(RIG2, m_lFreq[1]);
+	//UpdateData(TRUE);
+	//SetFreq(RIG2, m_lFreq[1]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedBtnR1FreqA()
@@ -554,8 +555,8 @@ void COmniRIG_ClientDlg::OnBnClickedBtnR1FreqB()
 
 void COmniRIG_ClientDlg::OnBnClickedBtnR2FreqB()
 {
-	UpdateData(TRUE);
-	SetFreqB(RIG2, m_lFreq[1]);
+	//UpdateData(TRUE);
+	//SetFreqB(RIG2, m_lFreq[1]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedRadioR1VfoA()
