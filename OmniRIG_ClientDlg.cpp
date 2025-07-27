@@ -119,7 +119,7 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_CHECK_R1_SPLIT, m_checkSplit[0]);
 	DDX_Control(pDX, IDC_CHECK_R2_SPLIT, m_checkSplit[1]);
 	DDX_Control(pDX, IDC_STATIC_R1_RIG, m_staticRig[0]);
-	DDX_Control(pDX, IDC_STATIC_R2_RIG, m_staticRig[1]);
+	//DDX_Control(pDX, IDC_STATIC_R2_RIG, m_staticRig[1]);
 	DDX_Control(pDX, IDC_STATIC_R1_STATUS, m_staticStatus[0]);
 	DDX_Control(pDX, IDC_STATIC_R2_STATUS, m_staticStatus[1]);
 	DDX_Control(pDX, IDC_RADIO_R1_VFO_A, m_radioVfoA[0]);
@@ -296,6 +296,8 @@ HRESULT COmniRIG_ClientDlg::VisibleChange()
 
 HRESULT COmniRIG_ClientDlg::RigTypeChange(long RigNumber)
 {
+	RigNumber = 1;
+
 	TRACE("IOmniRigXEvents: RigTypeChange (RigNumber=%ld)\n", RigNumber);
 
 	IRigXPtr pRig = (RigNumber == 1) ? m_pOmniRig->Rig1 : m_pOmniRig->Rig2;

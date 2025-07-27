@@ -129,17 +129,12 @@ BEGIN
     LTEXT           "Freq",IDC_STATIC,145,58,16,8
     LTEXT           "Freq A",IDC_STATIC,145,85,22,8
     LTEXT           "Freq B",IDC_STATIC,145,112,22,8
-    GROUPBOX        "Radio 1",IDC_STATIC,7,21,116,174
-    GROUPBOX        "Radio 2",IDC_STATIC,131,21,116,174
     RTEXT           "Mode: ",IDC_STATIC,14,164,48,8
     RTEXT           "Mode: ",IDC_STATIC,137,164,48,8
-    RTEXT           "Rig: ",IDC_STATIC,20,33,32,8
-    RTEXT           "Status: ",IDC_STATIC,19,46,32,8
+    LTEXT           "Rig: ",IDC_STATIC,20,33,32,8
+    LTEXT           "Status: ",IDC_STATIC,19,46,32,8
     LTEXT           "Static",IDC_STATIC_R1_RIG,54,33,63,8
     LTEXT           "Static",IDC_STATIC_R1_STATUS,54,46,63,8
-    RTEXT           "Rig: ",IDC_STATIC,143,33,32,8
-    RTEXT           "Status: ",IDC_STATIC,143,46,32,8
-    LTEXT           "Static",IDC_STATIC_R2_RIG,177,33,63,8
     LTEXT           "Static",IDC_STATIC_R2_STATUS,177,46,63,8
 END
 
