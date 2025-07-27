@@ -100,7 +100,7 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Text(pDX, IDC_R1_FREQ, m_lFreq[0]);
 	DDX_Text(pDX, IDC_R2_FREQ, m_lFreq[1]);
 	//DDX_Control(pDX, IDC_R1_FREQ, m_editFreq[0]);
-	DDX_Control(pDX, IDC_R2_FREQ, m_editFreq[1]);
+	//DDX_Control(pDX, IDC_R2_FREQ, m_editFreq[1]);
 	DDX_Text(pDX, IDC_R1_FREQ_A, m_lFreqA[0]);
 	DDX_Text(pDX, IDC_R2_FREQ_A, m_lFreqA[1]);
 	DDX_Control(pDX, IDC_R1_FREQ_A, m_editFreqA[0]);
@@ -110,7 +110,7 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_R1_FREQ_B, m_editFreqB[0]);
 	DDX_Control(pDX, IDC_R2_FREQ_B, m_editFreqB[1]);
 	//DDX_Control(pDX, IDC_BTN_R1_FREQ, m_btnFreq[0]);
-	DDX_Control(pDX, IDC_BTN_R2_FREQ, m_btnFreq[1]);
+	//DDX_Control(pDX, IDC_BTN_R2_FREQ, m_btnFreq[1]);
 	DDX_Control(pDX, IDC_BTN_R1_FREQ_A, m_btnFreqA[0]);
 	DDX_Control(pDX, IDC_BTN_R2_FREQ_A, m_btnFreqA[1]);
 	DDX_Control(pDX, IDC_BTN_R1_FREQ_B, m_btnFreqB[0]);
@@ -127,8 +127,8 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_RADIO_R2_VFO_A, m_radioVfoA[1]);
 	DDX_Control(pDX, IDC_RADIO_R1_VFO_B, m_radioVfoB[0]);
 	DDX_Control(pDX, IDC_RADIO_R2_VFO_B, m_radioVfoB[1]);
-	DDX_Control(pDX, IDC_SPIN_R1_FREQ, m_spinFreq[0]);
-	DDX_Control(pDX, IDC_SPIN_R2_FREQ, m_spinFreq[1]);
+	//DDX_Control(pDX, IDC_SPIN_R1_FREQ, m_spinFreq[0]);
+	//DDX_Control(pDX, IDC_SPIN_R2_FREQ, m_spinFreq[1]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_A, m_spinFreqA[0]);
 	DDX_Control(pDX, IDC_SPIN_R2_FREQ_A, m_spinFreqA[1]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_B, m_spinFreqB[0]);
@@ -140,8 +140,8 @@ BEGIN_MESSAGE_MAP(COmniRIG_ClientDlg, CDialog)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_DIALOG_VISIBLE, &COmniRIG_ClientDlg::OnBnClickedDialogVisible)
-	ON_BN_CLICKED(IDC_BTN_R1_FREQ, &COmniRIG_ClientDlg::OnBnClickedBtnR1Freq)
-	ON_BN_CLICKED(IDC_BTN_R2_FREQ, &COmniRIG_ClientDlg::OnBnClickedBtnR2Freq)
+	//ON_BN_CLICKED(IDC_BTN_R1_FREQ, &COmniRIG_ClientDlg::OnBnClickedBtnR1Freq)
+	//ON_BN_CLICKED(IDC_BTN_R2_FREQ, &COmniRIG_ClientDlg::OnBnClickedBtnR2Freq)
 	ON_BN_CLICKED(IDC_BTN_R1_FREQ_A, &COmniRIG_ClientDlg::OnBnClickedBtnR1FreqA)
 	ON_BN_CLICKED(IDC_BTN_R2_FREQ_A, &COmniRIG_ClientDlg::OnBnClickedBtnR2FreqA)
 	ON_BN_CLICKED(IDC_BTN_R1_FREQ_B, &COmniRIG_ClientDlg::OnBnClickedBtnR1FreqB)
@@ -199,7 +199,7 @@ BOOL COmniRIG_ClientDlg::OnInitDialog()
 
 	for(int nIndex = 0; nIndex < MAX_RADIO; nIndex++)
 	{
-		m_spinFreq[nIndex].SetRange32(0, 0x7FFFFFFF);
+		//m_spinFreq[nIndex].SetRange32(0, 0x7FFFFFFF);
 		m_spinFreqA[nIndex].SetRange32(0, 0x7FFFFFFF);
 		m_spinFreqB[nIndex].SetRange32(0, 0x7FFFFFFF);
 	}
@@ -308,7 +308,7 @@ HRESULT COmniRIG_ClientDlg::RigTypeChange(long RigNumber)
 	m_editFreqA[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQA);
 	m_editFreqB[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQB);
 
-	m_spinFreq[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQ);
+	//m_spinFreq[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQ);
 	m_spinFreqA[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQA);
 	m_spinFreqB[nRigIndex].EnableWindow(m_lReadable[nRigIndex] & PM_FREQB);
 
