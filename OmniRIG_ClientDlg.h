@@ -25,6 +25,14 @@ using namespace OmniRig;
 #define VFO_A		0
 #define VFO_B		1
 
+class CMyClickableStatic : public CStatic
+{
+protected:
+	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+	afx_msg void OnRButtonDown(UINT nFlags, CPoint point);
+	DECLARE_MESSAGE_MAP()
+};
+
 class CMyComboBox : public CComboBox
 {
 public:
@@ -137,4 +145,5 @@ private:
 	CButton m_radioVfoA[MAX_RADIO];
 	CButton m_radioVfoB[MAX_RADIO];
 	CBrush m_brushBg;
+	CMyClickableStatic m_myStatic;
 };

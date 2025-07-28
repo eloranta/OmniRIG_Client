@@ -28,6 +28,23 @@ static LPCTSTR g_lpszRigStatus[] = {
 	_T("On Line")
 };
 
+BEGIN_MESSAGE_MAP(CMyClickableStatic, CStatic)
+	ON_WM_LBUTTONDOWN()
+	ON_WM_RBUTTONDOWN()
+END_MESSAGE_MAP()
+
+void CMyClickableStatic::OnLButtonDown(UINT nFlags, CPoint point)
+{
+	AfxMessageBox(L"Left click on static!");
+	CStatic::OnLButtonDown(nFlags, point);
+}
+
+void CMyClickableStatic::OnRButtonDown(UINT nFlags, CPoint point)
+{
+	AfxMessageBox(L"Right click on static!");
+	CStatic::OnLButtonDown(nFlags, point);
+}
+
 // CAboutDlg dialog used for App About
 
 class CAboutDlg : public CDialog
@@ -110,6 +127,7 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_RADIO_R1_VFO_B, m_radioVfoB[0]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_A, m_spinFreqA[0]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_B, m_spinFreqB[0]);
+	DDX_Control(pDX, IDC_MY_STATIC, m_myStatic);
 }
 
 BEGIN_MESSAGE_MAP(COmniRIG_ClientDlg, CDialog)
@@ -206,6 +224,7 @@ BOOL COmniRIG_ClientDlg::OnInitDialog()
 	}
 
 	m_brushBg.CreateSolidBrush(RGB(240, 240, 255));
+
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
