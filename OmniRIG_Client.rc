@@ -114,16 +114,16 @@ BEGIN
     LTEXT           "Status: ",IDC_STATIC,7,20,32,8
     LTEXT           "Static",IDC_STATIC_R1_RIG,42,7,63,8
     LTEXT           "Static",IDC_STATIC_R1_STATUS,42,20,63,8
-    CTEXT           ".",IDC_DIGIT1,9,52,8,8
-    CTEXT           ".",IDC_DIGIT2,19,52,8,8
-    CTEXT           ".",IDC_DIGIT3,36,52,8,8
-    CTEXT           ".",IDC_DIGIT4,45,52,8,8
-    CTEXT           ".",IDC_DIGIT5,55,52,8,8
-    CTEXT           ".",IDC_DIGIT6,72,52,8,8
-    CTEXT           ".",IDC_DIGIT7,81,52,8,8
-    CTEXT           ".",IDC_DIGIT8,91,52,8,8
-    CTEXT           ".",IDC_STATIC,27,52,8,8
-    CTEXT           ".",IDC_STATIC,63,52,8,8
+    CTEXT           ".",IDC_DIGIT1,9,52,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_DIGIT2,19,52,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_DIGIT3,36,52,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_DIGIT4,45,52,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_DIGIT5,55,52,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_DIGIT6,72,52,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_DIGIT7,81,52,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_DIGIT8,91,52,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_STATIC,27,52,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_STATIC,63,52,8,8,SS_NOTIFY
     CTEXT           ".",IDC_DIGIT9,138,53,8,8
     CTEXT           ".",IDC_DIGIT10,148,53,8,8
     CTEXT           ".",IDC_DIGIT11,165,53,8,8

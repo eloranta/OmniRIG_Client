@@ -35,14 +35,12 @@ END_MESSAGE_MAP()
 
 void CMyClickableStatic::OnLButtonDown(UINT nFlags, CPoint point)
 {
-	AfxMessageBox(L"Left click on static!");
-	CStatic::OnLButtonDown(nFlags, point);
+	if (m_pParentDlg) m_pParentDlg->ChangeDigit(m_digitIndex, -1);
 }
 
 void CMyClickableStatic::OnRButtonDown(UINT nFlags, CPoint point)
 {
-	AfxMessageBox(L"Right click on static!");
-	CStatic::OnLButtonDown(nFlags, point);
+	if (m_pParentDlg) m_pParentDlg->ChangeDigit(m_digitIndex, +1);
 }
 
 // CAboutDlg dialog used for App About
@@ -128,6 +126,16 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_A, m_spinFreqA[0]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_B, m_spinFreqB[0]);
 	DDX_Control(pDX, IDC_MY_STATIC, m_myStatic);
+	/*
+	DDX_Control(pDX, IDC_DIGIT1, m_digitA[0]);
+	DDX_Control(pDX, IDC_DIGIT2, m_digitA[1]);
+	DDX_Control(pDX, IDC_DIGIT3, m_digitA[2]);
+	DDX_Control(pDX, IDC_DIGIT4, m_digitA[3]);
+	DDX_Control(pDX, IDC_DIGIT5, m_digitA[4]);
+	DDX_Control(pDX, IDC_DIGIT6, m_digitA[5]);
+	DDX_Control(pDX, IDC_DIGIT7, m_digitA[6]);
+	DDX_Control(pDX, IDC_DIGIT8, m_digitA[7]);
+	*/
 }
 
 BEGIN_MESSAGE_MAP(COmniRIG_ClientDlg, CDialog)
@@ -225,6 +233,12 @@ BOOL COmniRIG_ClientDlg::OnInitDialog()
 
 	m_brushBg.CreateSolidBrush(RGB(240, 240, 255));
 
+	for (int i = 0; i < 8; ++i)
+	{
+		m_digitA[i].SubclassDlgItem(IDC_DIGIT1 + i, this);
+		m_digitA[i].m_digitIndex = i;
+		m_digitA[i].m_pParentDlg = this;
+	}
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -604,4 +618,25 @@ HBRUSH COmniRIG_ClientDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 		return m_brushBg;
 	}
 	return hBrush;
+}
+
+void COmniRIG_ClientDlg::ChangeDigit(int index, int delta)
+{
+	long place = static_cast<long>(pow(10, 7-index));
+	m_lFreqA[0] += delta * place; 
+
+	UpdateDigitDisplay();
+	UpdateData(FALSE);
+	SetFreqA(RIG1, m_lFreqA[0]);
+}
+
+void COmniRIG_ClientDlg::UpdateDigitDisplay()
+{
+	CString freqStr;
+	freqStr.Format(L"%8ld", m_lFreqA[0]);
+	for (int i = 0; i < 8; ++i)
+	{
+		CString digit(freqStr.Mid(i, 1));
+		m_digitA[i].SetWindowTextW(digit);
+	}
 }

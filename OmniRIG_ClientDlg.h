@@ -27,6 +27,9 @@ using namespace OmniRig;
 
 class CMyClickableStatic : public CStatic
 {
+public:
+	int m_digitIndex = 0;
+	class COmniRIG_ClientDlg* m_pParentDlg = nullptr;
 protected:
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
 	afx_msg void OnRButtonDown(UINT nFlags, CPoint point);
@@ -67,8 +70,13 @@ public:
 // Dialog Data
 	enum { IDD = IDD_OMNIRIG_CLIENT_DIALOG };
 
+	void ChangeDigit(int index, int delta);
+	void UpdateDigitDisplay();
+
+
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
+
 
 
 // Implementation
@@ -146,4 +154,5 @@ private:
 	CButton m_radioVfoB[MAX_RADIO];
 	CBrush m_brushBg;
 	CMyClickableStatic m_myStatic;
+	CMyClickableStatic m_digitA[8];
 };
