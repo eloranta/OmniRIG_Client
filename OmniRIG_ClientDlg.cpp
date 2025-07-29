@@ -35,12 +35,12 @@ END_MESSAGE_MAP()
 
 void CMyClickableStatic::OnLButtonDown(UINT nFlags, CPoint point)
 {
-	if (m_pParentDlg) m_pParentDlg->ChangeDigit(m_digitIndex, -1);
+	if (m_pParentDlg) m_pParentDlg->ChangeDigit(m_group, m_digitIndex, -1);
 }
 
 void CMyClickableStatic::OnRButtonDown(UINT nFlags, CPoint point)
 {
-	if (m_pParentDlg) m_pParentDlg->ChangeDigit(m_digitIndex, +1);
+	if (m_pParentDlg) m_pParentDlg->ChangeDigit(m_group, m_digitIndex, +1);
 }
 
 // CAboutDlg dialog used for App About
@@ -224,9 +224,17 @@ BOOL COmniRIG_ClientDlg::OnInitDialog()
 
 	for (int i = 0; i < 8; ++i)
 	{
+		m_digitA[i].m_group = 0;
 		m_digitA[i].SubclassDlgItem(IDC_DIGIT1 + i, this);
 		m_digitA[i].m_digitIndex = i;
 		m_digitA[i].m_pParentDlg = this;
+	}
+	for (int i = 0; i < 8; ++i)
+	{
+		m_digitB[i].m_group = 1;
+		m_digitB[i].SubclassDlgItem(IDC_DIGIT9 + i, this);
+		m_digitB[i].m_digitIndex = i;
+		m_digitB[i].m_pParentDlg = this;
 	}
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
@@ -609,23 +617,32 @@ HBRUSH COmniRIG_ClientDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	return hBrush;
 }
 
-void COmniRIG_ClientDlg::ChangeDigit(int index, int delta)
+void COmniRIG_ClientDlg::ChangeDigit(int group, int index, int delta)
 {
 	long place = static_cast<long>(pow(10, 7-index));
-	m_lFreqA[0] += delta * place; 
+	if (group)
+		m_lFreqB[0] += delta * place;
+	else
+		m_lFreqA[0] += delta * place;
 
-	UpdateDigitDisplay();
+	UpdateDigitDisplay(group);
 	UpdateData(FALSE);
-	SetFreqA(RIG1, m_lFreqA[0]);
+	if (group)
+		SetFreqB(RIG1, m_lFreqB[0]);
+	else
+		SetFreqA(RIG1, m_lFreqA[0]);
 }
 
-void COmniRIG_ClientDlg::UpdateDigitDisplay()
+void COmniRIG_ClientDlg::UpdateDigitDisplay(int group)
 {
 	CString freqStr;
 	freqStr.Format(L"%8ld", m_lFreqA[0]);
 	for (int i = 0; i < 8; ++i)
 	{
 		CString digit(freqStr.Mid(i, 1));
-		m_digitA[i].SetWindowTextW(digit);
+		if (group)
+			m_digitB[i].SetWindowTextW(digit);
+		else
+			m_digitA[i].SetWindowTextW(digit);
 	}
 }

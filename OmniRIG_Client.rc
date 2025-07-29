@@ -124,16 +124,16 @@ BEGIN
     CTEXT           ".",IDC_DIGIT8,91,52,8,8,SS_NOTIFY
     CTEXT           ".",IDC_STATIC,27,52,8,8,SS_NOTIFY
     CTEXT           ".",IDC_STATIC,63,52,8,8,SS_NOTIFY
-    CTEXT           ".",IDC_DIGIT9,138,53,8,8
-    CTEXT           ".",IDC_DIGIT10,148,53,8,8
-    CTEXT           ".",IDC_DIGIT11,165,53,8,8
-    CTEXT           ".",IDC_DIGIT12,174,53,8,8
-    CTEXT           ".",IDC_DIGIT13,184,53,8,8
-    CTEXT           ".",IDC_DIGIT14,201,53,8,8
-    CTEXT           ".",IDC_DIGIT15,210,53,8,8
-    CTEXT           ".",IDC_DIGIT16,220,53,8,8
-    CTEXT           ".",IDC_STATIC,156,53,8,8
-    CTEXT           ".",IDC_STATIC,192,53,8,8
+    CTEXT           ".",IDC_DIGIT9,138,53,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_DIGIT10,148,53,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_DIGIT11,165,53,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_DIGIT12,174,53,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_DIGIT13,184,53,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_DIGIT14,201,53,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_DIGIT15,210,53,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_DIGIT16,220,53,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_STATIC,156,53,8,8,SS_NOTIFY
+    CTEXT           ".",IDC_STATIC,192,53,8,8,SS_NOTIFY
 END
 
 
