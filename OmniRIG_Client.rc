@@ -134,7 +134,6 @@ BEGIN
     CTEXT           ".",IDC_DIGIT16,220,53,8,8
     CTEXT           ".",IDC_STATIC,156,53,8,8
     CTEXT           ".",IDC_STATIC,192,53,8,8
-    LTEXT           "Static",IDC_MY_STATIC,112,27,19,8,SS_NOTIFY
 END
 
 

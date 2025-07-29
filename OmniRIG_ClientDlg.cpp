@@ -125,17 +125,6 @@ void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_RADIO_R1_VFO_B, m_radioVfoB[0]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_A, m_spinFreqA[0]);
 	DDX_Control(pDX, IDC_SPIN_R1_FREQ_B, m_spinFreqB[0]);
-	DDX_Control(pDX, IDC_MY_STATIC, m_myStatic);
-	/*
-	DDX_Control(pDX, IDC_DIGIT1, m_digitA[0]);
-	DDX_Control(pDX, IDC_DIGIT2, m_digitA[1]);
-	DDX_Control(pDX, IDC_DIGIT3, m_digitA[2]);
-	DDX_Control(pDX, IDC_DIGIT4, m_digitA[3]);
-	DDX_Control(pDX, IDC_DIGIT5, m_digitA[4]);
-	DDX_Control(pDX, IDC_DIGIT6, m_digitA[5]);
-	DDX_Control(pDX, IDC_DIGIT7, m_digitA[6]);
-	DDX_Control(pDX, IDC_DIGIT8, m_digitA[7]);
-	*/
 }
 
 BEGIN_MESSAGE_MAP(COmniRIG_ClientDlg, CDialog)
