@@ -220,7 +220,7 @@ BOOL COmniRIG_ClientDlg::OnInitDialog()
 		StatusChange(nRigNumber);
 	}
 
-	m_brushBg.CreateSolidBrush(RGB(240, 240, 255));
+	m_brushBg.CreateSolidBrush(RGB(242, 182, 66));
 
 	for (int i = 0; i < 8; ++i)
 	{
@@ -610,8 +610,14 @@ void COmniRIG_ClientDlg::OnBnClickedCheckR2Split()
 HBRUSH COmniRIG_ClientDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 {
 	HBRUSH hBrush = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
-	if (nCtlColor == CTLCOLOR_DLG)
+	switch (nCtlColor)
 	{
+	case CTLCOLOR_STATIC:
+	//case CTLCOLOR_EDIT:
+	case CTLCOLOR_LISTBOX:
+	case CTLCOLOR_DLG:
+		pDC->SetBkColor(RGB(242, 182, 66));
+		//pDC->SetBkMode(TRANSPARENT);
 		return m_brushBg;
 	}
 	return hBrush;
