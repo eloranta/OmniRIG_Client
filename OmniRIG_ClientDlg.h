@@ -154,6 +154,9 @@ private:
 	CButton m_radioVfoA[MAX_RADIO];
 	CButton m_radioVfoB[MAX_RADIO];
 	CBrush m_brushBg;
+	CFont m_font;
 	CMyClickableStatic m_digitA[8];
+	CStatic d1;
+	CStatic d2;
 	CMyClickableStatic m_digitB[8];
 };
