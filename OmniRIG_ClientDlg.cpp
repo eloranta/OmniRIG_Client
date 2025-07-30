@@ -221,7 +221,7 @@ BOOL COmniRIG_ClientDlg::OnInitDialog()
 	}
 
 	m_brushBg.CreateSolidBrush(RGB(242, 182, 66));
-	m_font.CreateFont(32, 0, 0, 0, FW_DONTCARE, FALSE, FALSE, 0,
+	m_font.CreateFont(32, 0, 0, 0, FW_BOLD, FALSE, FALSE, 0,
 		DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
 		DEFAULT_QUALITY, DEFAULT_PITCH | FF_DONTCARE, _T("Microsoft Sans Serif"));
 
