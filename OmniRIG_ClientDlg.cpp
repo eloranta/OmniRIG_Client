@@ -609,18 +609,14 @@ void COmniRIG_ClientDlg::OnBnClickedCheckR2Split()
 
 HBRUSH COmniRIG_ClientDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 {
-	HBRUSH hBrush = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
-	switch (nCtlColor)
+	switch (pWnd->GetDlgCtrlID())
 	{
-	case CTLCOLOR_STATIC:
-	//case CTLCOLOR_EDIT:
-	case CTLCOLOR_LISTBOX:
-	case CTLCOLOR_DLG:
+	case IDC_STATIC1:
 		pDC->SetBkColor(RGB(242, 182, 66));
-		//pDC->SetBkMode(TRANSPARENT);
-		return m_brushBg;
+		return (HBRUSH)m_brushBg;
 	}
-	return hBrush;
+
+	return CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
 }
 
 void COmniRIG_ClientDlg::ChangeDigit(int group, int index, int delta)
