@@ -159,4 +159,15 @@ private:
 	CStatic d1;
 	CStatic d2;
 	CMyClickableStatic m_digitB[8];
+public:
+	afx_msg void OnBnClickedButton1_8();
+	afx_msg void OnBnClickedButton3_5();
+	afx_msg void OnBnClickedButton7();
+	afx_msg void OnBnClickedButton10();
+	afx_msg void OnBnClickedButton14();
+	afx_msg void OnBnClickedButton18();
+	afx_msg void OnBnClickedButton21();
+	afx_msg void OnBnClickedButton24();
+	afx_msg void OnBnClickedButton28();
+	afx_msg void OnBnClickedButton50();
 };

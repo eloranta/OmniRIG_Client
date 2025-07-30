@@ -142,6 +142,16 @@ BEGIN_MESSAGE_MAP(COmniRIG_ClientDlg, CDialog)
 	ON_BN_CLICKED(IDC_RADIO_R1_VFO_B, &COmniRIG_ClientDlg::OnBnClickedRadioR1VfoB)
 	ON_BN_CLICKED(IDC_RADIO_R2_VFO_A, &COmniRIG_ClientDlg::OnBnClickedRadioR2VfoA)
 	ON_BN_CLICKED(IDC_RADIO_R2_VFO_B, &COmniRIG_ClientDlg::OnBnClickedRadioR2VfoB)
+	ON_BN_CLICKED(IDC_BUTTON1, &COmniRIG_ClientDlg::OnBnClickedButton1_8)
+	ON_BN_CLICKED(IDC_BUTTON2, &COmniRIG_ClientDlg::OnBnClickedButton3_5)
+	ON_BN_CLICKED(IDC_BUTTON3, &COmniRIG_ClientDlg::OnBnClickedButton7)
+	ON_BN_CLICKED(IDC_BUTTON4, &COmniRIG_ClientDlg::OnBnClickedButton10)
+	ON_BN_CLICKED(IDC_BUTTON5, &COmniRIG_ClientDlg::OnBnClickedButton14)
+	ON_BN_CLICKED(IDC_BUTTON6, &COmniRIG_ClientDlg::OnBnClickedButton18)
+	ON_BN_CLICKED(IDC_BUTTON7, &COmniRIG_ClientDlg::OnBnClickedButton21)
+	ON_BN_CLICKED(IDC_BUTTON8, &COmniRIG_ClientDlg::OnBnClickedButton24)
+	ON_BN_CLICKED(IDC_BUTTON9, &COmniRIG_ClientDlg::OnBnClickedButton28)
+	ON_BN_CLICKED(IDC_BUTTON10, &COmniRIG_ClientDlg::OnBnClickedButton50)
 END_MESSAGE_MAP()
 
 BEGIN_DISPATCH_MAP(COmniRIG_ClientDlg, CCmdTarget)
@@ -666,4 +676,54 @@ void COmniRIG_ClientDlg::UpdateDigitDisplay(int group)
 		else
 			m_digitA[i].SetWindowTextW(digit);
 	}
+}
+
+void COmniRIG_ClientDlg::OnBnClickedButton1_8()
+{
+	// TODO: Add your control notification handler code here
+}
+
+void COmniRIG_ClientDlg::OnBnClickedButton3_5()
+{
+	// TODO: Add your control notification handler code here
+}
+
+void COmniRIG_ClientDlg::OnBnClickedButton7()
+{
+	// TODO: Add your control notification handler code here
+}
+
+void COmniRIG_ClientDlg::OnBnClickedButton10()
+{
+	// TODO: Add your control notification handler code here
+}
+
+void COmniRIG_ClientDlg::OnBnClickedButton14()
+{
+	// TODO: Add your control notification handler code here
+}
+
+void COmniRIG_ClientDlg::OnBnClickedButton18()
+{
+	// TODO: Add your control notification handler code here
+}
+
+void COmniRIG_ClientDlg::OnBnClickedButton21()
+{
+	// TODO: Add your control notification handler code here
+}
+
+void COmniRIG_ClientDlg::OnBnClickedButton24()
+{
+	// TODO: Add your control notification handler code here
+}
+
+void COmniRIG_ClientDlg::OnBnClickedButton28()
+{
+	// TODO: Add your control notification handler code here
+}
+
+void COmniRIG_ClientDlg::OnBnClickedButton50()
+{
+	// TODO: Add your control notification handler code here
 }
