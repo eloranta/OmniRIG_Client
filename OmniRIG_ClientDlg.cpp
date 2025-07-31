@@ -643,8 +643,18 @@ HBRUSH COmniRIG_ClientDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	case IDC_DIGIT6:
 	case IDC_DIGIT7:
 	case IDC_DIGIT8:
+	case IDC_DIGIT9:
+	case IDC_DIGIT10:
+	case IDC_DIGIT11:
+	case IDC_DIGIT12:
+	case IDC_DIGIT13:
+	case IDC_DIGIT14:
+	case IDC_DIGIT15:
+	case IDC_DIGIT16:
 	case IDC_STATICD1:
 	case IDC_STATICD2:
+	case IDC_STATICD3:
+	case IDC_STATICD4:
 		pDC->SetBkColor(RGB(242, 182, 66));
 		return (HBRUSH)m_brushBg;
 	}
