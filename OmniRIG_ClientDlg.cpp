@@ -680,50 +680,60 @@ void COmniRIG_ClientDlg::UpdateDigitDisplay(int group)
 
 void COmniRIG_ClientDlg::OnBnClickedButton1_8()
 {
-	// TODO: Add your control notification handler code here
+	m_lFreqA[0] = 1840000;
+	SetFreqA(RIG1, m_lFreqA[0]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedButton3_5()
 {
-	// TODO: Add your control notification handler code here
+	m_lFreqA[0] = 3573000;
+	SetFreqA(RIG1, m_lFreqA[0]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedButton7()
 {
-	// TODO: Add your control notification handler code here
+	m_lFreqA[0] = 7074000;
+	SetFreqA(RIG1, m_lFreqA[0]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedButton10()
 {
-	// TODO: Add your control notification handler code here
+	m_lFreqA[0] = 10136000;
+	SetFreqA(RIG1, m_lFreqA[0]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedButton14()
 {
-	// TODO: Add your control notification handler code here
+	m_lFreqA[0] = 14074000;
+	SetFreqA(RIG1, m_lFreqA[0]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedButton18()
 {
-	// TODO: Add your control notification handler code here
+	m_lFreqA[0] = 18100000;
+	SetFreqA(RIG1, m_lFreqA[0]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedButton21()
 {
-	// TODO: Add your control notification handler code here
+	m_lFreqA[0] = 21074000;
+	SetFreqA(RIG1, m_lFreqA[0]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedButton24()
 {
-	// TODO: Add your control notification handler code here
+	m_lFreqA[0] = 24915000;
+	SetFreqA(RIG1, m_lFreqA[0]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedButton28()
 {
-	// TODO: Add your control notification handler code here
+	m_lFreqA[0] = 28074000;
+	SetFreqA(RIG1, m_lFreqA[0]);
 }
 
 void COmniRIG_ClientDlg::OnBnClickedButton50()
 {
-	// TODO: Add your control notification handler code here
+	m_lFreqA[0] = 50313000;
+	SetFreqA(RIG1, m_lFreqA[0]);
 }
