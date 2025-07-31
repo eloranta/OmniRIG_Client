@@ -390,7 +390,9 @@ HRESULT COmniRIG_ClientDlg::RigTypeChange(long RigNumber)
 	ParamsChange(RigNumber, PM_SPLITON);
 	ParamsChange(RigNumber, PM_VFOAA);
 
-	m_staticRig[nRigIndex].SetWindowText(pRig->GetRigType());
+	//m_staticRig[nRigIndex].SetWindowText(pRig->GetRigType());
+	m_rigType = (LPCWSTR)pRig->GetRigType();
+	SetWindowText(m_rigType + " " + m_rigStatus);
 	
 	return 0L;
 }
@@ -403,7 +405,9 @@ HRESULT COmniRIG_ClientDlg::StatusChange(long RigNumber)
 	int nRigIndex = RigNumber - 1;
 	IRigXPtr pRig = (RigNumber == 1) ? m_pOmniRig->Rig1 : m_pOmniRig->Rig2;
 	LPCTSTR lpszStatus = g_lpszRigStatus[pRig->GetStatus()];
-	m_staticStatus[nRigIndex].SetWindowText(lpszStatus);
+	//m_staticStatus[nRigIndex].SetWindowText(lpszStatus);
+	m_rigStatus = lpszStatus;
+	SetWindowText(m_rigType + " " + m_rigStatus);
 
 	return 0L;
 }

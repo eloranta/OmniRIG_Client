@@ -159,6 +159,8 @@ private:
 	CStatic d1;
 	CStatic d2;
 	CMyClickableStatic m_digitB[8];
+	CString m_rigType;
+	CString m_rigStatus;
 public:
 	afx_msg void OnBnClickedButton1_8();
 	afx_msg void OnBnClickedButton3_5();
