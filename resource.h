@@ -75,8 +75,9 @@
 #define IDC_STATICD3                    1065
 #define IDC_RADIO_R1_VFO_B2             1066
 #define IDC_RADIO_R2_VFO_B              1067
+#define IDC_BUTTON11                    1067
+#define IDC_BUTTONTX                    1067
 #define IDC_STATICD4                    1069
-
 
 // Next default values for new objects
 // 
@@ -84,7 +85,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        130
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1067
+#define _APS_NEXT_CONTROL_VALUE         1068
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

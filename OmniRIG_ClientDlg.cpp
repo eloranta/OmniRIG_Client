@@ -420,7 +420,7 @@ HRESULT COmniRIG_ClientDlg::StatusChange(long RigNumber)
 HRESULT COmniRIG_ClientDlg::ParamsChange(long RigNumber, long Params)
 {
 	RigNumber = 1;
-	TRACE("IOmniRigXEvents: ParamsChange (RigNumber=%ld, Params=%ld)\n", RigNumber, Params);
+	TRACE("IOmniRigXEvents: ParamsChange (RigNumber=%ld, Params=%0x)\n", RigNumber, Params);
 	
 	if (RigNumber < 1 || RigNumber > MAX_RADIO)
 		return 0L;
@@ -429,6 +429,17 @@ HRESULT COmniRIG_ClientDlg::ParamsChange(long RigNumber, long Params)
 
 	IRigXPtr pRig = (RigNumber == 1) ? m_pOmniRig->Rig1 : m_pOmniRig->Rig2;
 
+	if (Params & 0x400000)
+	{
+		m_txOn = true;
+		GetDlgItem(IDC_BUTTONTX)->SetWindowText(_T("TX ON"));
+
+	}
+	if (Params & 0x200000)
+	{
+		m_txOn = false;
+		GetDlgItem(IDC_BUTTONTX)->SetWindowText(_T("TX OFF"));
+	}
 	if (Params & PM_FREQA)
 	{
 		m_lFreqA[nRigIndex] = pRig->GetFreqA();

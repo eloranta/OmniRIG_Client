@@ -163,6 +163,7 @@ private:
 	CMyClickableStatic m_digitB[8];
 	CString m_rigType;
 	CString m_rigStatus;
+	bool m_txOn = false;
 public:
 	afx_msg void OnBnClickedButton1_8();
 	afx_msg void OnBnClickedButton3_5();
