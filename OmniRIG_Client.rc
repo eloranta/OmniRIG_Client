@@ -121,10 +121,10 @@ BEGIN
     LTEXT           "Freq A",IDC_STATIC,10,148,22,8,NOT WS_VISIBLE
     LTEXT           "Freq B",IDC_STATIC,142,150,22,8,NOT WS_VISIBLE
     LTEXT           "Mode: ",IDC_STATIC,6,131,48,8
-    LTEXT           "Rig: ",IDC_STATIC,8,87,32,8
-    LTEXT           "Status: ",IDC_STATIC,6,100,32,8
-    LTEXT           "Static",IDC_STATIC_R1_RIG,42,87,64,8
-    LTEXT           "Static",IDC_STATIC_R1_STATUS,42,100,64,8
+    LTEXT           "Rig: ",IDC_STATIC,8,87,32,8,NOT WS_VISIBLE
+    LTEXT           "Status: ",IDC_STATIC,6,100,32,8,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC_R1_RIG,42,87,64,8,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC_R1_STATUS,42,100,64,8,NOT WS_VISIBLE
     CTEXT           ".",IDC_DIGIT9,129,135,8,8,SS_NOTIFY
     CTEXT           ".",IDC_DIGIT10,139,135,8,8,SS_NOTIFY
     CTEXT           ".",IDC_DIGIT11,155,135,8,8,SS_NOTIFY
