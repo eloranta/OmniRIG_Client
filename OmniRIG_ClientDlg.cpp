@@ -686,7 +686,10 @@ void COmniRIG_ClientDlg::ChangeDigit(int group, int index, int delta)
 void COmniRIG_ClientDlg::UpdateDigitDisplay(int group)
 {
 	CString freqStr;
-	freqStr.Format(L"%8ld", m_lFreqA[0]);
+	if (group)
+		freqStr.Format(L"%8ld", m_lFreqB[0]);
+	else
+		freqStr.Format(L"%8ld", m_lFreqA[0]);
 	for (int i = 0; i < 8; ++i)
 	{
 		CString digit(freqStr.Mid(i, 1));

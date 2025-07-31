@@ -43,8 +43,6 @@
 #define IDC_RADIO_R1_VFO_B              1034
 #define IDC_RADIO_R2_VFO_A              1035
 #define IDC_DIGIT1                      1035
-#define IDC_RADIO_R1_VFO_B2             1036
-#define IDC_RADIO_R2_VFO_B              1036
 #define IDC_DIGIT2                      1036
 #define IDC_DIGIT3                      1037
 #define IDC_DIGIT4                      1038
@@ -75,7 +73,10 @@
 #define IDC_BUTTON9                     1063
 #define IDC_BUTTON10                    1064
 #define IDC_STATICD3                    1065
-#define IDC_STATICD4                    1066
+#define IDC_RADIO_R1_VFO_B2             1066
+#define IDC_RADIO_R2_VFO_B              1067
+#define IDC_STATICD4                    1069
+
 
 // Next default values for new objects
 // 
