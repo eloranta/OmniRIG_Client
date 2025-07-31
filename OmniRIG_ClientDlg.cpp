@@ -247,6 +247,10 @@ BOOL COmniRIG_ClientDlg::OnInitDialog()
 	d1.SetFont(&m_font);
 	d2.SubclassDlgItem(IDC_STATICD2, this);
 	d2.SetFont(&m_font);
+	d11.SubclassDlgItem(IDC_STATICD3, this);
+	d11.SetFont(&m_font);
+	d21.SubclassDlgItem(IDC_STATICD4, this);
+	d21.SetFont(&m_font);
 
 	for (int i = 0; i < 8; ++i)
 	{
@@ -254,6 +258,7 @@ BOOL COmniRIG_ClientDlg::OnInitDialog()
 		m_digitB[i].SubclassDlgItem(IDC_DIGIT9 + i, this);
 		m_digitB[i].m_digitIndex = i;
 		m_digitB[i].m_pParentDlg = this;
+		m_digitB[i].SetFont(&m_font);
 	}
 
 	return TRUE;  // return TRUE  unless you set the focus to a control

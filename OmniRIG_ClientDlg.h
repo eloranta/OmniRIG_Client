@@ -158,6 +158,8 @@ private:
 	CMyClickableStatic m_digitA[8];
 	CStatic d1;
 	CStatic d2;
+	CStatic d11;
+	CStatic d21;
 	CMyClickableStatic m_digitB[8];
 	CString m_rigType;
 	CString m_rigStatus;
