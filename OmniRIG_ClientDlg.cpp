@@ -106,6 +106,7 @@ COmniRIG_ClientDlg::~COmniRIG_ClientDlg()
 		m_dwCookie = 0L;
 	}
 	m_brushBg.DeleteObject();
+	m_brushOnAir.DeleteObject();
 }
 
 void COmniRIG_ClientDlg::DoDataExchange(CDataExchange* pDX)
@@ -231,6 +232,7 @@ BOOL COmniRIG_ClientDlg::OnInitDialog()
 	}
 
 	m_brushBg.CreateSolidBrush(RGB(242, 182, 66));
+	m_brushOnAir.CreateSolidBrush(RGB(255, 0, 0));
 	m_font.CreateFont(32, 0, 0, 0, FW_BOLD, FALSE, FALSE, 0,
 		DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
 		DEFAULT_QUALITY, DEFAULT_PITCH | FF_DONTCARE, _T("Microsoft Sans Serif"));
@@ -432,13 +434,13 @@ HRESULT COmniRIG_ClientDlg::ParamsChange(long RigNumber, long Params)
 	if (Params & 0x400000)
 	{
 		m_txOn = true;
-		GetDlgItem(IDC_BUTTONTX)->SetWindowText(_T("TX ON"));
+		GetDlgItem(IDC_BUTTONTX)->SetWindowText(_T("On Air"));
 
 	}
 	if (Params & 0x200000)
 	{
 		m_txOn = false;
-		GetDlgItem(IDC_BUTTONTX)->SetWindowText(_T("TX OFF"));
+		GetDlgItem(IDC_BUTTONTX)->SetWindowText(_T(""));
 	}
 	if (Params & PM_FREQA)
 	{
@@ -648,6 +650,21 @@ void COmniRIG_ClientDlg::OnBnClickedCheckR2Split()
 
 HBRUSH COmniRIG_ClientDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 {
+	if (pWnd->GetDlgCtrlID() == IDC_BUTTONTX)
+	{
+		if (m_txOn)
+		{
+			pDC->SetTextColor(RGB(255, 255, 255));
+			pDC->SetBkColor(RGB(255, 0, 0));
+			return (HBRUSH)m_brushOnAir;
+		}
+		else
+		{
+			pDC->SetBkColor(RGB(242, 182, 66));
+			return (HBRUSH)m_brushBg;
+		}
+	}
+
 	switch (pWnd->GetDlgCtrlID())
 	{
 	case IDC_STATIC1:
